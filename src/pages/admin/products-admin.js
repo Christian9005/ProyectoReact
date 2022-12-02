@@ -34,7 +34,7 @@ export const ProductEdit = () => {
 
     const handleChange = (event)=>{
         const target = event.target;
-        const value = target.value;
+        const value = target.value=== "checkbox" ? target.checked : target.value;
         const name = target.id;
         setProduct((productCurrent)=>({...productCurrent,[name]:value}))
     }
@@ -59,7 +59,7 @@ export const ProductEdit = () => {
                 <input type="text" className="form-control" id="nombre"
                         value={nombre} onChange={(e)=>handleChange(e)} 
                         required 
-                        maxLength="20"
+                        maxLength="40"
                 ></input>
                     <div className="invalid-feedback">
                         Nombre Obligatorio

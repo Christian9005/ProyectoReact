@@ -1,3 +1,4 @@
+import { ClientEdit } from "../pages/admin/clients-admin";
 import { MarcaEdit } from "../pages/admin/marca-admin";
 import { ProductEdit } from "../pages/admin/products-admin";
 
@@ -15,6 +16,13 @@ export default [
         key:"products-edit-admin",
         route: "/admin/products/:productId",
         component: <ProductEdit/>,
+        showLink:false
+    },
+    {
+        name: "Editar Clientes",
+        key:"clients-edit-admin",
+        route: "/admin/clients/:clientId",
+        component: <ClientEdit/>,
         showLink:false
     }
 ];
