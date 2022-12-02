@@ -41,11 +41,16 @@ export const MarcaEdit = () => {
         <form className="row" onSubmit={(e)=>handleSummit(e)}>
             <div className="col-6">
                 <label htmlFor="nombre" className="form-label">Nombre</label>
+                <div className="input-group has-validation">
                 <input type="text" className="form-control" id="nombre"
                         value={nombre} onChange={(e)=>handleChange(e)} 
                         required 
                         maxLength="20"
                 ></input>
+                    <div className="invalid-feedback">
+                        Nombre Obligatorio
+                    </div>
+                </div>
             </div>
             <div className="col-12 mt-3">
                 <button className="btn btn-danger" type="button" onClick={(e)=>navegacion(`/marcas`)}>Cancelar</button>
@@ -100,8 +105,8 @@ const MarcaList = () => {
                     </MDBModalHeader>
                     <MDBModalBody>
                         <div>
-                            <h1>Id: {marcas.filter(mar=>mar.id===marcaID).map((mar)=>mar.id)}</h1>
-                            <h1>Nombre: {marcas.filter(mar=>mar.id===marcaID).map((mar)=>mar.nombre)}</h1>
+                            <h3>Id: {marcas.filter(mar=>mar.id===marcaID).map((mar)=>mar.id)}</h3>
+                            <h3>Nombre: {marcas.filter(mar=>mar.id===marcaID).map((mar)=>mar.nombre)}</h3>
                         </div>
                     </MDBModalBody>
 
